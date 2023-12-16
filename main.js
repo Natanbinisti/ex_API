@@ -52,8 +52,6 @@ function render(pageContent) {
 }
 
 
-
-
 run()
 
 
@@ -87,3 +85,28 @@ run()
 <=              FRONT-END               =>
 <========================================>
  */
+function renderLoginForm() {
+    let loginTemplate =    `<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Username</label>
+  <input class="form-control" id="username">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Password</label>
+  <input class="form-control" id="password">
+</div>
+<button type="button" class="btn" id="logInButton">Log In</button>`
+
+render(loginTemplate)
+    const loginButton = document.querySelector("#logInButton")
+    loginButton.addEventListener('click', () =>{
+        login()
+    })
+}
+function generateMessageForm() {
+    let messageTemplate =
+        `<div class="form-control">
+          <input class="form-control" type="text" name="" id="postMessage" placeholder="your message">
+          <button class="btn btn-success form-control" id="postMessageButton">Envoyer</button>
+        </div>`
+    return messageTemplate
+}
